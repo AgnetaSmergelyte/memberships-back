@@ -58,10 +58,19 @@ module.exports = {
     },
     getAllUsers: async (req, res) => {
         try {
-            const allUsers = await userDb.find();
+            const allUsers = await userDb.find().sort({name: 1});
             resSend(res, false, allUsers, null);
         } catch (err) {
-            resSend(res, true, null, 'Server error')
+            resSend(res, true, null, 'Server error');
         }
-    }
+    },
+    getAllUsersDesc: async (req, res) => {
+        try {
+            const allUsers = await userDb.find().sort({name: -1});
+            resSend(res, false, allUsers, null);
+        } catch (err) {
+            resSend(res, true, null, 'Server error');
+        }
+    },
+
 }

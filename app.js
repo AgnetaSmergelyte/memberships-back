@@ -9,7 +9,7 @@ require("dotenv").config()
 mongoose.connect(process.env.DB_KEY)
     .then(() => {
         console.log('connection success')
-    }).catch(w => {
+    }).catch(e => {
     console.log('ERROR', e)
 })
 
