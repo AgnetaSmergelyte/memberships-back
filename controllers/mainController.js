@@ -72,5 +72,4 @@ module.exports = {
             resSend(res, true, null, 'Server error');
         }
     },
-
 }
