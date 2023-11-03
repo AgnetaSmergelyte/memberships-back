@@ -1,12 +1,12 @@
 const express = require("express");
-const app = express();
+const index = express();
 require("dotenv").config();
 const port = process.env.PORT;
 const cors = require("cors");
 const router = require("./router/mainRouter");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DB_KEY);
-app.use(cors());
-app.use(express.json());
-app.use("/", router);
-app.listen(port);
+index.use(cors());
+index.use(express.json());
+index.use("/", router);
+index.listen(port);
